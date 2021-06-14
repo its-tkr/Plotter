@@ -26,10 +26,46 @@ def create_df(value):
         return (pd.DataFrame(rows,columns=col).head())
     elif value==3:
         pat=os.getcwd()
-        file=input("Enter your file name")
-        file_path=pat+'\\'+file+".csv"
-        print(file_path)
-        return(pd.DataFrame(pd.read_csv(file_path).head()))
+        file=input("enter the filename:")
+        file_pat=pat+"\\"+file+".csv"
+        x=pd.read_csv(file_pat)
+        return(pd.DataFrame(x).head())
+    else:
+        return("Please enter a valid option")
+def plotter(option):
+    print("sorry enaku theriyathu")
+
+def plotter_col(option):
+    print("sorry enaku theriyathu")
+
+def select_plot(option):
+    if option=="1":
+        print("Select the type of plot in which you want to view the dataframe by selecting 1 to 6")
+        print("1.Line Plot")
+        print("2.Scatter Plot")
+        print("3.Bar Plot")
+        print("4.Histogram")
+        print("5.Box Plot")
+        print("6.Surface Plot")
+        plot=input()
+        plotter(plot)
+    elif option=="2":
+        print("Select the type of plot in which you want to view the dataframe by selecting 1 to 7")
+        print("1.Line Plot")
+        print("2.Scatter Plot")
+        print("3.Bar Plot")
+        print("4.Histogram")
+        print("5.Box Plot")
+        print("6.Surface Plot")
+        print("7.Bubble Plot")
+        plot=input()
+        plotter_col(plot)
+    else:
+        print("Please enter a valid option")
+
+
+
+
 
 
 print("Welcome to Plotter")
@@ -38,4 +74,8 @@ print("2.Customize your own dataframes")
 print("3.Upload your file(csv/json)")
 option = int(input("please enter any option between 1 or 2 or 3:"))
 df = create_df(option)
+print("DataFrame is created and head of the dataframe is given below")
 print(df)
+print("Enter '1' if you want to plot the entire columns or \nEnter '2' to print specific column")
+plot_option=input()
+select_plot(plot_option)
