@@ -32,8 +32,22 @@ def create_df(value):
         return(pd.DataFrame(x).head())
     else:
         return("Please enter a valid option")
+
 def plotter(option):
-    print("sorry enaku theriyathu")
+    if option=="1":
+        print(df.iplot(kind="line"))
+    elif option=="2":
+        print(df.iplot(kind="scatter"))
+    elif option=="3":
+        print(df.iplot(kind="bar"))
+    elif option=="4":
+        print(df.iplot(kind="hist"))
+    elif option=="5":
+        print(df.iplot(kind="box"))
+    elif option=="6":
+        print(df.iplot(kind="surface"))
+    else:
+        print("please enter valid option")
 
 def plotter_col(option):
     print("sorry enaku theriyathu")
