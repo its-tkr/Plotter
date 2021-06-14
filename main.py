@@ -50,7 +50,69 @@ def plotter(option):
         print("please enter valid option")
 
 def plotter_col(option):
-    print("sorry enaku theriyathu")
+    col_no=input("Please enter the no of columns you want to plot as 1,2 or 3:")
+    if col_no=="1":
+        col=input("Enter the column name:")
+        if option=="1":
+            print(df[col].iplot(kind="line"))
+        elif option=="2":
+            print(df[col].iplot(kind="scatter"))
+        elif option=="3":
+            print(df[col].iplot(kind="bar"))
+        elif option=="4":
+            print(df[col].iplot(kind="hist"))
+        elif option=="5":
+            print(df[col].iplot(kind="box"))
+        elif option=="6" or option=="7":
+            print("bubble plot and surface plot cannot be plotted for single column")
+        else:
+            print("please enter valid option")
+    elif col_no=="2":
+        col1=input("Enter the first column:")
+        col2=input("Enter the second column:")
+        if option=="1":
+            print(df[[col1,col2]].iplot(kind="line"))
+        elif option=="2":
+            print(df[[col1,col2]].iplot(kind="scatter"))
+        elif option=="3":
+            print(df[[col1,col2]].iplot(kind="bar"))
+        elif option=="4":
+            print(df[[col1,col2]].iplot(kind="hist"))
+        elif option=="5":
+            print(df[[col1,col2]].iplot(kind="box"))
+        elif option=="6":
+            print(df[[col1,col2]].iplot(kind="surface"))
+        elif option=="7":
+            size=input("enter the size of the bubble plot:")
+            print(df[[col1,col2]].iplot(kind="bubble",x=col1 ,y=col2,size=size))
+        else:
+            print("please enter valid option")
+
+    elif col_no=="3":
+        col1=input("Enter the first column:")
+        col2=input("Enter the second column:")
+        col3=input("Enter the third column:")
+        if option=="1":
+            print(df[[col1,col2,col3]].iplot(kind="line"))
+        elif option=="2":
+            print(df[[col1,col2,col3]].iplot(kind="scatter"))
+        elif option=="3":
+            print(df[[col1,col2,col3]].iplot(kind="bar"))
+        elif option=="4":
+            print(df[[col1,col2,col3]].iplot(kind="hist"))
+        elif option=="5":
+            print(df[[col1,col2,col3]].iplot(kind="box"))
+        elif option=="6":
+            print(df[[col1,col2,col3]].iplot(kind="surface"))
+        elif option=="7":
+            size=input("enter the size of the bubble plot:")
+            print(df[[col1,col2,col3]].iplot(kind="bubble",x=col1 ,y=col2,z=col3,size=size))
+        else:
+            print("please enter valid option")
+
+    else:
+        print("poya loosu")
+
 
 def select_plot(option):
     if option=="1":
